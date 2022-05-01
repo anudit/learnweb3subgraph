@@ -1,0 +1,24 @@
+specVersion: 0.0.2
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: LearnWeb3GraduatesNFT
+    network: matic
+    source:
+      address: "0x1ed25648382c2e6da067313e5dacb4f138bc8b33"
+      abi: LearnWeb3GraduatesNFT
+      startBlock: 25159561
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - TransferSingle
+      abis:
+        - name: LearnWeb3GraduatesNFT
+          file: LearnWeb3GraduatesNFT\abis\LearnWeb3GraduatesNFT.json
+      eventHandlers:
+        - event: TransferSingle(indexed address,indexed address,indexed address,uint256,uint256)
+          handler: handleTransferSingle
+      file: LearnWeb3GraduatesNFT\LearnWeb3GraduatesNFT.wasm

@@ -1,0 +1,8 @@
+type Badge @entity {
+  id: ID!
+  operator: Bytes!
+  userAddress: Bytes!
+  tokenId: BigInt!
+  tokenUri: String!
+  timestamp: BigInt!
+}
